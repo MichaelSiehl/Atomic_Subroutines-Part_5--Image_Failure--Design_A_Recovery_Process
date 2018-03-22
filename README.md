@@ -52,7 +52,6 @@ More detailed explanations are given in the sections below.<br />
 
 # The OOOPimsc_admImageStatus_CA.f90 source code file
 The OOOPimsc_admImageStatus_CA.f90 source code file contains all the required parallel logic codes, mainly:<br />
-<br />
 - Two procedures that implement customized EventPost / EventWait synchronizations (OOOPimscEventPostScalar_intImageActivityFlag99_CA , OOOPimscEventWaitScalar_intImageActivityFlag99_CA).<br />
 These do offer synchronization diagnostics (to detect synchronization failures of any kind), an abort timer (i.e. a time limit for the synchronization process), and a circular synchronization feature that is required to recover from a corrupted data transfer through atomic subroutines after a (simulated) synchronization failure. (This last feature is outside the Fortran language specification, the behavior of atomic subroutines after image failure may be undefined. We do only use it because it was required with ifort, and nothing else from the Fortran 2008 language could help to recover after image failure. It is strongly recommended to use Fortran 2018 features instead, when available.)<br />
 The features of the customized EventPost / EventWait procedures are described in more detail here:<br />
