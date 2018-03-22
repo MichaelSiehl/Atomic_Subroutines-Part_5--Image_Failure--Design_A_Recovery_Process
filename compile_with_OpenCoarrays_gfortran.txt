@@ -1,5 +1,5 @@
 To compile the example program with OpenCoarrays/GFortran on Linux:
-caf OOOGglob_Globals.f90 OOOEerro_admError.f90 OOOPcifc_admCheckImageForSync_CA.f90 OOOPimsc_admImageStatus_CA.f90 Main.f90 -o a_gfortran.out
+caf OOOGglob_Globals.f90 OOOEerro_admError.f90 OOOPimsc_admImageStatus_CA.f90 Main.f90 -o a_gfortran.out
 
 Please run the program with 6 coarray images:
 cafrun -np 6 ./a_gfortran.out
