@@ -1,6 +1,9 @@
 # Atomic_Subroutines-Part_5--Image_Failure--Design_A_Recovery_Process
 Fortran 2008 coarray programming with unordered execution segments (user-defined ordering) and customized synchronization procedures - Atomic Subroutines - Part 5: How to cope with unreliable data transfers at low-level PGAS programming - Image failure: Design a recovery process.
 
+# Be aware:
+The example program here uses coding tricks that are surely undefined by the Fortran 2008 language. (More precisely, the runtime behavior of atomic subroutines after an image failure might be undefined). Thus, the coding tricks shown here may or may not work with a specific processor / hardware / algorithm and shouldn't be used with any production codes. The only reason for still uploading this is that the example code could be used to show that data transfer failures through atomic subroutines after (simulated) image failure are due to timing failures: The example code uses a 'circular synchronization trick' to recover from such 'timing failures' between coarray images.
+
 # Overview
 This GitHub repository contains a relatively simple Fortran 2008 coarray program that demonstrates the basic design of a recovery process after an image failure. Such a recovery process is described for Fortran 2018 in chapter 3.2 of the paper 'The new features of Fortran 2018' by John Reid, ISO/IEC JTC1/SC22/WG5 N2145 (https://isotc.iso.org/livelink/livelink?func=ll&objId=19441669&objAction=Open&viewType=1).<br />
 
