@@ -70,3 +70,6 @@ Firstly, simply switch the (corrupted) remote data transfer channel directly aft
 Secondly, and required with ifort, apply a 'circular synchronization' with both, the customized EventPost and customized EventWait procedures. This is explained in some detail here: https://github.com/MichaelSiehl/Atomic_Subroutines-Part_4a--Implementing_A_Circular_Synchronization .<br />
 
 Nevertheless, it is not recommended to rely on such programming tricks for any production codes. Instead we will use Fortran 2018 techniques as soon as they are available.<br />
+
+# Adjusting the timer
+The OOOGglob_Globals.f90 source code file contains two parameter definitions (constants) that allow to adjust the timer of the example program: OOOGglob_reaTimeLimitInSec_small and OOOGglob_reaCircSyncTimeDelayInSec_small can be used to adjust for execution with another processor / system / algorithm. That may or may not work (undefined runtime behavior).
